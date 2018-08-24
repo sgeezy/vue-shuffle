@@ -14,6 +14,11 @@
     <h1 class="title">
       <img class="vue-logo" src="https://vuejs.org/images/logo.png" /> Card Shuffling
     </h1>
+    <div class="main-buttons">
+      <button v-on:click="shuffleDeck" class="button is-primary">
+        Shuffle Baby! <i class="fas fa-random"></i>
+      </button>
+    </div>
     <div class="deck">
       <div v-for="card in cards" :key="card.id" class="card" :class="suitColor[card.suit]">
         <span class="card__suit card__suit--top">{{ card.suit }}</span>
