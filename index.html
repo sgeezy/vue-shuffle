@@ -15,20 +15,11 @@
       <img class="vue-logo" src="https://vuejs.org/images/logo.png" /> Card Shuffling
     </h1>
     <div class="speed-buttons">
-      <button class="button is-small"
-          :class="{ 'is-light': shuffleSpeed != 'shuffleSlow'}"
-          v-on:click="shuffleSpeed = 'shuffleSlow'">
-        Slow
-      </button>
-      <button class="button is-small"
-          :class="{ 'is-light': shuffleSpeed != 'shuffleMedium'}"
-          v-on:click="shuffleSpeed = 'shuffleMedium'">
-        Medium
-      </button>
-      <button class="button is-small"
-          :class="{ 'is-light': shuffleSpeed != 'shuffleFast'}"
-          v-on:click="shuffleSpeed = 'shuffleFast'">
-        Fast
+      <button v-for="speed in shuffleTypes"
+              class="button is-small"
+              :class="{ 'is-light': shuffleSpeed != `shuffle${speed}` }"
+              v-on:click="shuffleSpeed = `shuffle${speed}`">
+        {{ speed }}
       </button>
     </div>
     <div class="main-buttons">
